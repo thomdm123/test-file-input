@@ -11,24 +11,25 @@ import TheWelcome from './components/TheWelcome.vue'
 // });
 
 const fileSelected = (e) => {
-  console.log(e)
-  // if (e.target.files.length === 0) return
 
-  // let f = e.target.files[0]
-  // //let dotCount = f.name.match(/[.]/g).length
-  // //let extension = f.name.substr(f.name.lastIndexOf('\\') + 1).split('.')[dotCount]
+  if (e.target.files.length === 0) return
 
-  // if (f.name.length > 2000) {
-  //   alert('File name is too long.')
+  let f = e.target.files[0]
+  //let dotCount = f.name.match(/[.]/g).length
+  //let extension = f.name.substr(f.name.lastIndexOf('\\') + 1).split('.')[dotCount]
+
+  if (f.name.length > 2000) {
+    alert('File name is too long.')
+    return
+  }
+  // if (extension.toUpperCase() != 'PDF') {
+  //   alert('Only files with a .PDF extension are allowed.')
   //   return
   // }
-  // // if (extension.toUpperCase() != 'PDF') {
-  // //   alert('Only files with a .PDF extension are allowed.')
-  // //   return
-  // // }
-  // const formData = new FormData()
-  // formData.append('newFile', f, f.name)
-  // save(formData)
+  const formData = new FormData()
+  formData.append('newFile', f, f.name)
+  console.log(formData)
+  //save(formData)
 }
 
 </script>
