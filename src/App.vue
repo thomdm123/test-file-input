@@ -27,8 +27,13 @@ const fileSelected = (e) => {
   //   return
   // }
   const formData = new FormData()
-  formData.append('newFile', f, f.name)
-  console.log(formData)
+  formData.append('newFileb', f, f.name)
+  formData.append('newFile', f)
+  formData.append('name',  f.name)
+  for (var pair of formData.entries()) {
+    console.log(pair[0]+ ', ' + pair[1]); 
+}
+
   //save(formData)
 }
 
