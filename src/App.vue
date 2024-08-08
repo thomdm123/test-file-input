@@ -28,7 +28,7 @@ console.log(process.env.VUE_APP_APIKEY)
   // }
   
   const data = new FormData()
-  formData.append('file', f, f.name)
+  data.append('file', f, f.name)
 
   
 data.append('UPLOADCARE_PUB_KEY', 'demopublickey');
@@ -46,7 +46,7 @@ const options = {
 		'x-rapidapi-key': '3afbffbb4dmsh62c90aa1fc83dbdp1eab72jsn11ce19fa00de',
 		'x-rapidapi-host': 'upload.p.rapidapi.com'
 	},
-	body: formData
+	body: data
 };
 
 
