@@ -10,8 +10,8 @@ import TheWelcome from './components/TheWelcome.vue'
 //   console.log(event.target.files[0].name)
 // });
 
-const fileSelected = (e) => {
-
+const fileSelected = async (e) => {
+console.log(process.env.VUE_APP_APIKEY)
   if (e.target.files.length === 0) return
 
   let f = e.target.files[0]
@@ -26,15 +26,33 @@ const fileSelected = (e) => {
   //   alert('Only files with a .PDF extension are allowed.')
   //   return
   // }
+  
   const formData = new FormData()
-  formData.append('newFileb', f, f.name)
-  formData.append('newFile', f)
-  formData.append('name',  f.name)
+  formData.append('image_url', f, f.name)
+  formData.append('scale', '2');
+
   for (var pair of formData.entries()) {
     console.log(pair[0]+ ', ' + pair[1]); 
 }
 
-  //save(formData)
+const options = {
+	method: 'POST',
+	headers: {
+		'x-rapidapi-key': '3afbffbb4dmsh62c90aa1fc83dbdp1eab72jsn11ce19fa00de',
+		'x-rapidapi-host': 'ai-picture-upscaler.p.rapidapi.com'
+	},
+	body: data
+};
+
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+
 }
 
 </script>
