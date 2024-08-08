@@ -27,19 +27,24 @@ console.log(process.env.VUE_APP_APIKEY)
   //   return
   // }
   
-  const formData = new FormData()
-  formData.append('image_url', f, f.name)
-  formData.append('scale', '2');
+  const data = new FormData()
+  formData.append('file', f, f.name)
+
+  
+data.append('UPLOADCARE_PUB_KEY', 'demopublickey');
+data.append('UPLOADCARE_STORE', '1');
+
 
   for (var pair of formData.entries()) {
     console.log(pair[0]+ ', ' + pair[1]); 
 }
-const url = 'https://ai-picture-upscaler.p.rapidapi.com/upscaler/v2/';
+// const url = 'https://ai-picture-upscaler.p.rapidapi.com/upscaler/v2/';
+const url = 'https://upload.p.rapidapi.com/base/';
 const options = {
 	method: 'POST',
 	headers: {
 		'x-rapidapi-key': '3afbffbb4dmsh62c90aa1fc83dbdp1eab72jsn11ce19fa00de',
-		'x-rapidapi-host': 'ai-picture-upscaler.p.rapidapi.com'
+		'x-rapidapi-host': 'upload.p.rapidapi.com'
 	},
 	body: formData
 };
