@@ -41,7 +41,7 @@ const options = {
 		'x-rapidapi-key': '3afbffbb4dmsh62c90aa1fc83dbdp1eab72jsn11ce19fa00de',
 		'x-rapidapi-host': 'ai-picture-upscaler.p.rapidapi.com'
 	},
-	body: data
+	body: formData
 };
 
 
