@@ -35,7 +35,7 @@ data.append('UPLOADCARE_PUB_KEY', 'demopublickey');
 data.append('UPLOADCARE_STORE', '1');
 
 
-  for (var pair of formData.entries()) {
+  for (var pair of data.entries()) {
     console.log(pair[0]+ ', ' + pair[1]); 
 }
 // const url = 'https://ai-picture-upscaler.p.rapidapi.com/upscaler/v2/';
