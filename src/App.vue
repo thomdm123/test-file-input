@@ -34,7 +34,7 @@ console.log(process.env.VUE_APP_APIKEY)
   for (var pair of formData.entries()) {
     console.log(pair[0]+ ', ' + pair[1]); 
 }
-
+const url = 'https://ai-picture-upscaler.p.rapidapi.com/upscaler/v2/';
 const options = {
 	method: 'POST',
 	headers: {
